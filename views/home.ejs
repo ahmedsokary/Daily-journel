@@ -1,0 +1,13 @@
+<%-include("partials/header")-%><!-- added a file called partials so must include its path to the header and footer-->
+
+<h1>home</h1>
+<p><%=text1 %></p>
+<%// console.log(compose_array.length) %>
+<!--in the for loop u=you don't put compose_array.length in <%%> as it is already defined as a js tag so no nees -->
+  <% compose_array.forEach(function(element){ %>
+  <h1><%=element.composeTitle%></h1>
+  <p style="display:inline"><%=element.composeBody.substring(0,100)+"..."%></p>
+  <a href="http://localhost:3000/post/<%=element.composeTitle%>">Read more</a>
+
+  <% }) %>
+<%-include("partials/footer")-%>
